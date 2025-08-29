@@ -35,10 +35,10 @@ export function createHeader() {
   const logo = document.createElement("div");
   logo.classList.add("logo");
   logo.innerHTML = `
-  <a href="#/home">
-    <img src="${logoUrl}" alt="Logo" />
-  </a>
-`;
+    <a href="#/home">
+      <img src="${logoUrl}" alt="Logo" />
+    </a>
+  `;
 
   // 🔹 Bottom bar con dropdown
   const bottom = document.createElement("div");
@@ -70,32 +70,48 @@ export function createHeader() {
             <li><a href="#/info/contact">Contact</a></li>
           </ul>
         </li>
-
-        
       </ul>
     </nav>
   `;
 
+  // Logo dentro del bottom
   bottom.appendChild(logo);
 
+  // Botones de la derecha
   bottom.innerHTML += `
-  <div class="nav-right">
-    <button class="icon"><img src="${searchIcon}" alt="Buscar"></button>
-    <button class="icon" id="cartButton">
-      <img src="${handbagIcon}" alt="Carrito">
-      <span id="cart-count" class="cart-count">0</span>
-    </button>
-  </div>
-`;
+    <div class="nav-right">
+      <button class="icon"><img src="${searchIcon}" alt="Buscar"></button>
+      <button class="icon" id="cartButton">
+        <img src="${handbagIcon}" alt="Carrito">
+        <span id="cart-count" class="cart-count">0</span>
+      </button>
+    </div>
+  `;
 
+  // 🔹 Hamburger (después de que bottom exista)
+  const hamburger = document.createElement("div");
+  hamburger.classList.add("hamburger");
+  hamburger.innerHTML = `
+    <span></span>
+    <span></span>
+    <span></span>
+  `;
 
+  bottom.insertBefore(hamburger, bottom.firstChild);
+
+  const navMenu = bottom.querySelector(".nav-left ul");
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+    hamburger.classList.toggle("active");
+  });
+
+  // Agregar top y bottom al header
   header.appendChild(top);
   header.appendChild(bottom);
 
   // 🌙 Dark Mode
   const darkToggle = options.querySelector("#darkModeToggle");
 
-  // cargar preferencia
   if (localStorage.getItem("theme") === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
   }
@@ -111,7 +127,7 @@ export function createHeader() {
     }
   });
 
-  // Mostrar/Ocultar carrito al pulsar el icono
+  // Mostrar/Ocultar carrito
   const cartButton = header.querySelector("#cartButton");
   const cartContainer = header.querySelector("#cart");
   cartButton.addEventListener("click", () => {

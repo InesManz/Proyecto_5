@@ -54,6 +54,23 @@ header {
   outline: none;
   box-shadow: none;
 }
+
+#darkModeToggle {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+#darkModeToggle:focus,
+#darkModeToggle:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+
 .header-bottom {
   display: flex;
   justify-content: space-between;
@@ -155,4 +172,60 @@ header {
 
 .nav-right .icon{
   position: relative;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  gap: 5px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  background: var(--text-color);
+  height: 3px;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+.nav-left {
+  transition: max-height 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+
+@media (max-width: 768px) {
+  .nav-left ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    z-index: 1000;
+  }
+
+  .nav-left ul.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }

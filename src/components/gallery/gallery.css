@@ -14,8 +14,8 @@
 }
 
 .product img {
-  width: 800px;
-  height: 800px;
+  width: 100%;
+  height: 100%;
   object-fit: contain; 
   border-radius: 6px;
   background: var(--primary-color);
@@ -23,10 +23,19 @@
   cursor: pointer;
 }
 
+.related-card img {
+  cursor: pointer;
+}
+
+
 
 @media (max-width: 900px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .product img {
+    height: 80%; 
+    width: 80%;
   }
 }
 
@@ -35,9 +44,10 @@
   .gallery {
     grid-template-columns: 1fr;
   }
+  .product img {
+    height: 80%; 
+    width: 80%;
+  }
 }
 
 
-.related-card img {
-  cursor: pointer;
-}
