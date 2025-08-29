@@ -1,0 +1,158 @@
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  font-family: sans-serif;
+  background-color: var(--primary-color);
+  padding: 0.5rem;  
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;  
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem;
+}
+
+.social-icons a img {
+  width: 18px;
+  margin-right: 10px;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.theme-icon {
+  width: 20px;
+  height: 20px;
+}
+.theme-toggle,
+.icon {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.theme-toggle img,
+.icon img {
+  border: none;
+  background: none;
+  outline: none;
+  box-shadow: none;
+}
+.header-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.nav-left ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-left li {
+  position: relative;
+}
+
+.nav-left a {
+  text-decoration: none;
+  font-weight: bold;
+  color: inherit;
+}
+/*este es el menu desplegable*/
+
+.dropdown {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  top: 100%;
+  left: 0;
+  background-color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  min-width: 150px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  list-style: none; 
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.dropdown li {
+  margin: 0.5rem 0;
+  white-space: nowrap;
+}
+
+.dropdown li a {
+  color: var(--text-color);
+  font-weight: normal;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown li:hover {
+  background-color: var(--accent-color);
+}
+
+.has-dropdown:hover .dropdown {
+ 
+  visibility: visible;
+  transform: translateY(0);
+  display: flex;
+}
+
+
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+
+.nav-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-right .icon img {
+  width: 20px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--secondary-color);
+  color: var(--accent-color);
+  border-radius: 50%;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.nav-right .icon{
+  position: relative;
+}

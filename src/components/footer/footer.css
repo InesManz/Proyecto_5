@@ -1,0 +1,102 @@
+.footer {
+  background: #444;
+  color: #fff;
+  padding: 2rem;
+  font-family: monospace;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col h4 {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.socials a {
+  margin-right: 10px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter input {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.newsletter button {
+  padding: 0.5rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #666;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.payment-icons img {
+  height: 25px;
+  margin-right: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr; 
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .payment-icons img {
+    height: 20px;
+    margin: 0 5px;
+  }
+
+  .newsletter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .newsletter input {
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .newsletter button {
+    width: 100%;
+  }
+}
